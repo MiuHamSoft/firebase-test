@@ -1,0 +1,58 @@
+<div class="login-component main-container">
+    <div class="login-component__content">
+        <div class="grid-container vertical-align">
+            <div class="col-8">
+                <div class="login-component__form-container">
+                    <div class="login-component__form-wrapper">
+                        <h3 class="login-component__title mb-3">¡Bienvenido a Luminicel!</h3>
+
+                        <form (ngSubmit)="onLogin(loginForm)" [formGroup]="loginForm">
+
+
+                            <input type="text" matInput placeholder="Nombre de usuario" formControlName="username">
+
+                            @if (!loginForm.get('username')?.valid && loginForm.get('username')?.touched) {
+                            <span>Ingresar nombre de usuario válido</span>
+                            }
+
+                            <input [type]="hidePassword ? 'password' : 'text'" matInput placeholder="Contraseña"
+                                formControlName="password">
+                            @if (hidePassword) {
+                            <button matSuffix mat-icon-button aria-label="Show Password"
+                                (click)="hidePassword = !hidePassword">
+                            </button>
+                            }
+                            @else {
+                            <button matSuffix mat-icon-button aria-label="Hide Password"
+                                (click)="hidePassword = !hidePassword">
+                            </button>
+                            }
+
+                            @if (!loginForm.get('password')?.valid && loginForm.get('password')?.touched) {
+                            <span>Ingresar contraseña válida (Al menos 8 caracteres)</span>
+                            }
+
+
+                            <div class="footer">
+                                <p></p>
+                                <button mat-raised-button color="primary" type="submit">Iniciar
+                                    sesión</button>
+                                <p></p>
+                                <button mat-button color="primary" type="button"
+                                    [routerLink]="['/olvide-mi-contrasena']">Olvidé mi
+                                    contraseña</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-4">
+                <div class="login-component__logo-wrapper">
+                    <img src="../../../../assets/logo/default-logo.svg" class="login-component__logo" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,156 @@
+.login-component {
+    filter: grayscale(50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__content {
+        background-color: rgba($color: #e0e0e0, $alpha: 0.8);
+        border-radius: 5px;
+        box-shadow:
+            0 0.3rem 0.3rem rgba($color: #000000, $alpha: 0.1),
+            0 0.5rem 0.5rem rgba($color: #000000, $alpha: 0.1),
+            0 0.7rem 0.7rem rgba($color: #000000, $alpha: 0.1);
+    }
+
+    &__form-container {
+        padding: 2rem 4rem;
+        background-color: rgba($color: #888888, $alpha: 0.6);
+        clip-path: ellipse(100% 100% at 0% 50%);
+    }
+
+    &__form-wrapper {
+        animation-name: moveInRight;
+        animation-duration: 1.0s;
+        animation-timing-function: ease;
+    }
+
+    &__title {
+        color: white;
+        font-weight: 700;
+        font-size: 2rem;
+    }
+
+    &__logo-wrapper {
+        // clip-path: circle(50% at 50% 50%);
+        // background-color: #e2e2e2;
+        padding: 3rem;
+    }
+
+
+    &__logo {
+        width: 100%;
+        height: auto;
+
+
+    }
+}
+
+//Animation
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10vw);
+    }
+
+    70% {
+        transform: translateX(-2vw);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+// X-Small devices
+@media only screen and (max-width: 575.98px) {
+    .loginContainer {
+        width: 90vw;
+    }
+
+    .welcome {
+        height: auto;
+        min-height: 20vh;
+
+        div {
+            h3 {
+                font-size: 6vw
+            }
+
+            img {
+                width: 15vw;
+            }
+        }
+    }
+
+    .login-form {
+        font-size: 4vw;
+
+        h4 {
+            font-size: 5vw;
+        }
+    }
+
+}
+
+// Small devices (landscape phones, 576px and up)
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+    .loginContainer {
+        width: 80vw;
+    }
+
+    .welcome {
+        height: auto;
+        min-height: 30vh;
+
+        div {
+            h3 {
+                font-size: 4vw
+            }
+
+            img {
+                width: 10vw;
+            }
+        }
+    }
+
+    .login-form {
+        font-size: 4vw;
+
+        h4 {
+            font-size: 5vw;
+        }
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+    .loginContainer {
+        width: 70vw;
+    }
+
+    .welcome {
+        height: auto;
+        min-height: 35vh;
+
+        div {
+            h3 {
+                font-size: 3vw
+            }
+
+            img {
+                width: 10vw;
+            }
+        }
+    }
+
+    .login-form {
+        font-size: 3vw;
+
+        h4 {
+            font-size: 4vw;
+        }
+    }
+}
